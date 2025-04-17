@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
 
-## Project info
+# CREC - Centre de Recherche, d'Étude et de Créativité
 
-**URL**: https://lovable.dev/projects/b0eb44b2-c080-4fce-a6f2-b18a7ba3f460
+Interface frontend pour le site web du CREC, une institution éducative catholique.
 
-## How can I edit this code?
+## À propos du projet
 
-There are several ways of editing your application.
+Ce projet est l'interface utilisateur du site web du CREC, une institution d'enseignement supérieur qui propose des formations dans divers domaines en s'appuyant sur des valeurs éducatives et spirituelles. Le design est élégant et sobre, utilisant principalement des tons de bleu foncé, doré et blanc.
 
-**Use Lovable**
+## Technologies utilisées
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b0eb44b2-c080-4fce-a6f2-b18a7ba3f460) and start prompting.
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- Shadcn/UI (composants)
+- Vite (build tool)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Structure du projet
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/           # Composants réutilisables
+│   ├── common/           # Composants génériques (Card, Banner, etc.)
+│   ├── layout/           # Composants de mise en page (Header, Footer)
+│   └── ui/               # Composants UI de base (boutons, inputs, etc.)
+├── context/              # Contextes React (LanguageContext)
+├── layouts/              # Layouts de page (MainLayout)
+├── pages/                # Pages du site
+│   ├── about/            # Pages À propos
+│   ├── admin/            # Pages Administration
+│   ├── contact/          # Pages Contact
+│   ├── donate/           # Pages Dons
+│   ├── events/           # Pages Événements
+│   ├── formations/       # Pages Formations
+│   ├── news/             # Pages Actualités
+│   ├── resources/        # Pages Ressources
+│   ├── student/          # Pages Étudiants
+│   └── teacher/          # Pages Enseignants
+├── App.tsx               # Composant principal
+├── index.css             # Styles globaux
+├── main.tsx              # Point d'entrée
+└── routes.tsx            # Configuration des routes
 ```
 
-**Edit a file directly in GitHub**
+## Fonctionnalités
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Design responsive
+- Prise en charge multilingue (FR/EN)
+- Navigation intuitive
+- Interface utilisateur moderne et élégante
+- Composants réutilisables
 
-**Use GitHub Codespaces**
+## Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clonez ce dépôt
+2. Installez les dépendances : `npm install`
+3. Lancez le serveur de développement : `npm run dev`
 
-## What technologies are used for this project?
+## Développement
 
-This project is built with:
+### Structure des pages
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Le site comprend plusieurs sections principales :
 
-## How can I deploy this project?
+- **À propos** : Mission, équipe, partenaires
+- **Formations** : Cours, programmes, université, admission, citoyenneté
+- **Événements** : Liste d'événements, détails, calendrier
+- **Actualités** : Articles, vie campus, témoignages
+- **Espace étudiant** : Connexion, tableau de bord, inscriptions, documents
+- **Espace enseignant** : Connexion, gestion des cours, ressources
+- **Dons** : Page de dons, information sur les bourses
+- **Contact** : Formulaire de contact
+- **Ressources** : PDF, galerie, documents officiels
+- **Administration** : Gestion du contenu, des utilisateurs, statistiques
 
-Simply open [Lovable](https://lovable.dev/projects/b0eb44b2-c080-4fce-a6f2-b18a7ba3f460) and click on Share -> Publish.
+### Multilingue
 
-## Can I connect a custom domain to my Lovable project?
+Le projet utilise un contexte React (`LanguageContext`) pour gérer la traduction. Les traductions sont stockées dans des objets JavaScript dans le fichier `LanguageContext.tsx`.
 
-Yes, you can!
+## TODO
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Implémenter toutes les pages selon l'arborescence définie
+- Améliorer la gestion des traductions avec plus de contenu
+- Ajouter les fonctionnalités de recherche
+- Intégrer des formulaires interactifs
+- Préparer les points d'entrée pour le backend
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Notes
+
+Ce projet est uniquement frontend. Les intégrations backend (API, authentification, etc.) devront être ajoutées ultérieurement.

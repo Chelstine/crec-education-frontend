@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				crec: {
+					// Palette de couleurs CREC
+					darkblue: '#14213D',
+					blue: '#1A2F5A',
+					lightblue: '#3A5BA0',
+					gold: '#FCA311',
+					lightgold: '#FFCB77',
+					white: '#FFFFFF',
+					offwhite: '#F5F5F5',
+					gray: '#E5E5E5',
+					darkgray: '#5C5C5C',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
