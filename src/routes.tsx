@@ -25,6 +25,18 @@ import CitizenshipPage from '@/pages/formations/CitizenshipPage';
 import CampusLifePage from '@/pages/news/CampusLifePage';
 import TestimonialsPage from '@/pages/news/TestimonialsPage';
 
+// Événements
+import EventsPage from '@/pages/events/EventsPage';
+import EventDetailsPage from '@/pages/events/EventDetailsPage';
+import CalendarPage from '@/pages/events/CalendarPage';
+
+// Espace étudiant
+import StudentLoginPage from '@/pages/student/StudentLoginPage';
+import StudentPortalPage from '@/pages/student/StudentPortalPage';
+import StudentRegistrationPage from '@/pages/student/StudentRegistrationPage';
+import StudentDocumentsPage from '@/pages/student/StudentDocumentsPage';
+import StudentRequestsPage from '@/pages/student/StudentRequestsPage';
+
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -51,9 +63,9 @@ const routes: RouteObject[] = [
       { path: 'news/testimonials', element: <TestimonialsPage /> },
       
       // Événements
-      { path: 'events', element: <HomePage /> },
-      { path: 'events/:id', element: <HomePage /> },
-      { path: 'events/calendar', element: <HomePage /> },
+      { path: 'events', element: <EventsPage /> },
+      { path: 'events/:id', element: <EventDetailsPage /> },
+      { path: 'events/calendar', element: <CalendarPage /> },
       
       // Actualités
       { path: 'news', element: <HomePage /> },
