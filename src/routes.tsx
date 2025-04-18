@@ -1,9 +1,7 @@
-
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import MainLayout from '@/layouts/MainLayout';
 
-// Pages d'accueil et pages légales
-// Pages principales
+// Pages principales et pages légales
 import HomePage from '@/pages/HomePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import LegalPage from '@/pages/LegalPage';
@@ -17,58 +15,9 @@ import PartnersPage from '@/pages/about/PartnersPage';
 
 // Pages Formations
 import FormationsPage from '@/pages/formations/FormationsPage';
-// import CoursesPage from '@/pages/formations/CoursesPage';
-// import ProgramsPage from '@/pages/formations/ProgramsPage';
-// import UniversityPage from '@/pages/formations/UniversityPage';
-// import AdmissionPage from '@/pages/formations/AdmissionPage';
-// import CitizenshipPage from '@/pages/formations/CitizenshipPage';
+import ProgramsPage from '@/pages/formations/ProgramsPage';
+import UniversityPage from '@/pages/formations/UniversityPage';
 
-// Pages Événements
-// import EventsPage from '@/pages/events/EventsPage';
-// import EventDetailPage from '@/pages/events/EventDetailPage';
-// import CalendarPage from '@/pages/events/CalendarPage';
-
-// Pages Actualités
-// import NewsPage from '@/pages/news/NewsPage';
-// import ArticlesPage from '@/pages/news/ArticlesPage';
-// import CampusLifePage from '@/pages/news/CampusLifePage';
-// import TestimonialsPage from '@/pages/news/TestimonialsPage';
-
-// Pages Étudiants
-// import StudentLoginPage from '@/pages/student/StudentLoginPage';
-// import StudentDashboardPage from '@/pages/student/StudentDashboardPage';
-// import EnrollmentPage from '@/pages/student/EnrollmentPage';
-// import DocumentsPage from '@/pages/student/DocumentsPage';
-// import RequestsPage from '@/pages/student/RequestsPage';
-
-// Pages Enseignants
-// import TeacherLoginPage from '@/pages/teacher/TeacherLoginPage';
-// import TeacherCoursesPage from '@/pages/teacher/TeacherCoursesPage';
-// import ResourcesForTeachersPage from '@/pages/teacher/ResourcesForTeachersPage';
-// import TeacherAdminPage from '@/pages/teacher/TeacherAdminPage';
-
-// Pages Dons
-// import DonatePage from '@/pages/donate/DonatePage';
-// import BenefactorPage from '@/pages/donate/BenefactorPage';
-// import ScholarshipsPage from '@/pages/donate/ScholarshipsPage';
-
-// Page Contact
-import ContactPage from '@/pages/contact/ContactPage';
-
-// Pages Ressources
-// import ResourcesPage from '@/pages/resources/ResourcesPage';
-// import PDFResourcesPage from '@/pages/resources/PDFResourcesPage';
-// import GalleryPage from '@/pages/resources/GalleryPage';
-// import OfficialDocsPage from '@/pages/resources/OfficialDocsPage';
-
-// Pages Admin
-// import AdminPage from '@/pages/admin/AdminPage';
-// import ContentManagementPage from '@/pages/admin/ContentManagementPage';
-// import UsersManagementPage from '@/pages/admin/UsersManagementPage';
-// import StatisticsPage from '@/pages/admin/StatisticsPage';
-// import SettingsPage from '@/pages/admin/SettingsPage';
-
-// Définition des routes
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -84,11 +33,8 @@ const routes: RouteObject[] = [
       
       // Formations
       { path: 'formations', element: <FormationsPage /> },
-      { path: 'formations/courses', element: <HomePage /> },
-      { path: 'formations/programs', element: <HomePage /> },
-      { path: 'formations/university', element: <HomePage /> },
-      { path: 'formations/admission', element: <HomePage /> },
-      { path: 'formations/citizenship', element: <HomePage /> },
+      { path: 'formations/programs', element: <ProgramsPage /> },
+      { path: 'formations/university', element: <UniversityPage /> },
       
       // Événements
       { path: 'events', element: <HomePage /> },
