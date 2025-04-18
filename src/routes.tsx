@@ -6,7 +6,7 @@ import HomePage from '@/pages/HomePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import LegalPage from '@/pages/LegalPage';
 import PrivacyPage from '@/pages/PrivacyPage';
-import ContactPage from '@/pages/contact/ContactPage';  // Add this import
+import ContactPage from '@/pages/contact/ContactPage';
 
 // Pages À propos
 import AboutPage from '@/pages/about/AboutPage';
@@ -18,6 +18,12 @@ import PartnersPage from '@/pages/about/PartnersPage';
 import FormationsPage from '@/pages/formations/FormationsPage';
 import ProgramsPage from '@/pages/formations/ProgramsPage';
 import UniversityPage from '@/pages/formations/UniversityPage';
+import AdmissionsPage from '@/pages/formations/AdmissionsPage';
+import CitizenshipPage from '@/pages/formations/CitizenshipPage';
+
+// Pages News
+import CampusLifePage from '@/pages/news/CampusLifePage';
+import TestimonialsPage from '@/pages/news/TestimonialsPage';
 
 const routes: RouteObject[] = [
   {
@@ -36,6 +42,13 @@ const routes: RouteObject[] = [
       { path: 'formations', element: <FormationsPage /> },
       { path: 'formations/programs', element: <ProgramsPage /> },
       { path: 'formations/university', element: <UniversityPage /> },
+      { path: 'formations/admissions', element: <AdmissionsPage /> },
+      { path: 'formations/citizenship', element: <CitizenshipPage /> },
+      
+      // News
+      { path: 'news', element: <HomePage /> },
+      { path: 'news/campus', element: <CampusLifePage /> },
+      { path: 'news/testimonials', element: <TestimonialsPage /> },
       
       // Événements
       { path: 'events', element: <HomePage /> },
