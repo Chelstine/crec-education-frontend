@@ -6,6 +6,7 @@ import HomePage from '@/pages/HomePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import LegalPage from '@/pages/LegalPage';
 import PrivacyPage from '@/pages/PrivacyPage';
+import ContactPage from '@/pages/contact/ContactPage';  // Add this import
 
 // Pages À propos
 import AboutPage from '@/pages/about/AboutPage';
