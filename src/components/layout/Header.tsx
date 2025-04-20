@@ -1,10 +1,19 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Search, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Search } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
 import LangSwitcher from '@/components/common/LangSwitcher';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,32 +23,40 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
-  const mainNavItems = [
-    { name: t('nav.home'), path: '/' },
-    { name: t('nav.about'), path: '/about' },
-    { name: t('nav.formations'), path: '/formations' },
-    { name: t('nav.events'), path: '/events' },
-    { name: t('nav.news'), path: '/news' },
-    { name: t('nav.resources'), path: '/resources' },
-    { name: t('nav.contact'), path: '/contact' },
-  ];
+  // Structure des sous-menus pour les éléments de navigation
+  const submenuItems = {
+    about: [
+      { name: "Mission", path: "/about/mission" },
+      { name: "Équipe", path: "/about/team" },
+      { name: "Partenaires", path: "/about/partners" },
+    ],
+    formations: [
+      { name: "Programmes", path: "/formations/programs" },
+      { name: "Université", path: "/formations/university" },
+      { name: "Citoyenneté", path: "/formations/citizenship" },
+      { name: "Admission", path: "/formations/admission" },
+    ],
+    events: [
+      { name: "Calendrier", path: "/events/calendar" },
+      { name: "Conférences", path: "/events" },
+    ],
+    news: [
+      { name: "Vie de Campus", path: "/news/campus-life" },
+      { name: "Témoignages", path: "/news/testimonials" },
+    ],
+    resources: [
+      { name: "Publications", path: "/resources" },
+      { name: "Bibliothèque", path: "/resources/library" },
+    ],
+  };
 
   return (
     <header className="sticky top-0 w-full z-50">
-      {/* Barre supérieure avec info contact et login */}
+      {/* Barre supérieure simplifiée (sans téléphone et sans liens de connexion) */}
       <div className="bg-crec-darkblue text-white py-2 px-4">
         <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="hidden md:flex gap-6">
+          <div className="flex md:flex-row gap-6">
             <span>contact@crec-education.org</span>
-            <span>+33 (0)1 23 45 67 89</span>
-          </div>
-          <div className="flex gap-4 ml-auto">
-            <Link to="/student" className="hover:text-crec-lightgold transition">
-              {t('common.login')} Étudiant
-            </Link>
-            <Link to="/teacher" className="hover:text-crec-lightgold transition">
-              {t('common.login')} Enseignant
-            </Link>
           </div>
         </div>
       </div>
@@ -47,29 +64,154 @@ const Header = () => {
       {/* Navigation principale */}
       <div className="bg-white shadow-md py-3 px-4">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo remplacé par l'image fournie */}
           <Link to="/" className="flex items-center">
-            <div className="font-serif text-xl md:text-2xl font-bold text-crec-darkblue">
-              CREC
-              <span className="text-crec-gold">.</span>
-            </div>
+            <img 
+              src="/lovable-uploads/13786322-1618-43a4-a6ff-b01832fcf661.png" 
+              alt="CREC Logo" 
+              className="h-12"
+            />
           </Link>
 
-          {/* Navigation desktop */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {mainNavItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Button asChild variant="default" className="ml-2 bg-crec-gold hover:bg-crec-lightgold text-white">
-              <Link to="/donate">{t('nav.donate')}</Link>
-            </Button>
-          </nav>
+          {/* Navigation desktop avec menus déroulants */}
+          <div className="hidden lg:block">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <Link to="/" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-medium">
+                    {t('nav.home')}
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* À propos avec menu déroulant */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                    {t('nav.about')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {submenuItems.about.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Formations avec menu déroulant */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                    {t('nav.formations')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[220px] gap-1 p-2">
+                      {submenuItems.formations.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Événements avec menu déroulant */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                    {t('nav.events')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {submenuItems.events.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* News avec menu déroulant */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                    {t('nav.news')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {submenuItems.news.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Resources avec menu déroulant */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                    {t('nav.resources')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {submenuItems.resources.map((item) => (
+                        <li key={item.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.path}
+                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link to="/contact" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-medium">
+                    {t('nav.contact')}
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Button asChild variant="default" className="ml-2 bg-crec-gold hover:bg-crec-lightgold text-white">
+                    <Link to="/donate">{t('nav.donate')}</Link>
+                  </Button>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
           {/* Boutons utilitaires */}
           <div className="flex items-center gap-2">
@@ -116,16 +258,50 @@ const Header = () => {
         <div className="lg:hidden bg-white shadow-md">
           <div className="container mx-auto py-4">
             <nav className="flex flex-col">
-              {mainNavItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className="px-4 py-3 border-b border-gray-100 text-crec-darkblue hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+              <Link
+                to="/"
+                className="px-4 py-3 border-b border-gray-100 text-crec-darkblue hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.home')}
+              </Link>
+              
+              {/* Sous-menus repliables pour mobile */}
+              {Object.entries({ 
+                [t('nav.about')]: submenuItems.about,
+                [t('nav.formations')]: submenuItems.formations,
+                [t('nav.events')]: submenuItems.events,
+                [t('nav.news')]: submenuItems.news,
+                [t('nav.resources')]: submenuItems.resources
+              }).map(([title, items], idx) => (
+                <div key={idx} className="border-b border-gray-100">
+                  <div className="px-4 py-3 flex justify-between items-center text-crec-darkblue">
+                    {title}
+                    <ChevronDown size={16} />
+                  </div>
+                  <div className="pl-8 pb-2">
+                    {items.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block py-2 text-crec-blue hover:text-crec-gold"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               ))}
+              
+              <Link
+                to="/contact"
+                className="px-4 py-3 border-b border-gray-100 text-crec-darkblue hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.contact')}
+              </Link>
+              
               <Link
                 to="/donate"
                 className="px-4 py-3 bg-crec-gold text-white mt-2 text-center font-medium"

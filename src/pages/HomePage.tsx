@@ -6,6 +6,7 @@ import Card from '@/components/common/Card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { Leaf, Gavel } from 'lucide-react';
 
 const HomePage = () => {
   const { t } = useLanguage();
@@ -80,7 +81,7 @@ const HomePage = () => {
                 valeurs spirituelles et engagement sociétal.
               </p>
               <p className="mb-8 text-crec-darkgray">
-                Fondé sur des valeurs chrétiennes, notre centre est un lieu d'étude, de dialogue et de création 
+                Fondé sur des valeurs chrétiennes jésuites, notre centre est un lieu d'étude, de dialogue et de création 
                 où enseignants et étudiants collaborent pour répondre aux défis contemporains.
               </p>
               <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
@@ -90,8 +91,8 @@ const HomePage = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e" 
-                  alt="CREC Campus" 
+                  src="https://images.unsplash.com/photo-1473177104440-ffee2f376098" 
+                  alt="CREC Jésuite" 
                   className="w-full h-96 object-cover"
                 />
               </div>
@@ -106,8 +107,49 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Formations section */}
+      {/* Écologie section */}
       <section className="py-16 bg-crec-offwhite">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center mb-6">
+            <div className="bg-crec-lightgold p-3 rounded-full">
+              <Leaf className="h-6 w-6 text-crec-darkblue" />
+            </div>
+          </div>
+          <SectionTitle 
+            title="Écologie"
+            subtitle="S'engager pour la sauvegarde de notre maison commune"
+            align="center"
+          />
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-10">
+            <div className="order-2 md:order-1">
+              <h3 className="text-xl font-bold mb-4 text-crec-darkblue">Une conscience écologique</h3>
+              <p className="mb-4 text-crec-darkgray">
+                Le CREC s'engage dans la réflexion sur les enjeux écologiques contemporains, 
+                en intégrant les dimensions environnementales, sociales et spirituelles.
+              </p>
+              <p className="mb-6 text-crec-darkgray">
+                Nos programmes de formation et de recherche s'inspirent de l'encyclique Laudato Si' 
+                et proposent une vision intégrée de l'écologie qui reconnait l'interdépendance 
+                entre la nature, l'humanité et le transcendant.
+              </p>
+              <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
+                <Link to="/formations/ecology">Découvrir nos initiatives</Link>
+              </Button>
+            </div>
+            <div className="order-1 md:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" 
+                alt="Écologie intégrale" 
+                className="rounded-lg shadow-lg w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Formations section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Nos formations"
@@ -131,6 +173,47 @@ const HomePage = () => {
             <Button asChild variant="default" className="bg-crec-darkblue hover:bg-crec-blue">
               <Link to="/formations">Toutes nos formations</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Gouvernance section */}
+      <section className="py-16 bg-crec-offwhite">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center mb-6">
+            <div className="bg-crec-lightgold p-3 rounded-full">
+              <Gavel className="h-6 w-6 text-crec-darkblue" />
+            </div>
+          </div>
+          <SectionTitle 
+            title="Gouvernance"
+            subtitle="Une éthique responsable dans la gestion des organisations"
+            align="center"
+          />
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-10">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b" 
+                alt="Gouvernance éthique" 
+                className="rounded-lg shadow-lg w-full h-80 object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-crec-darkblue">Éthique et leadership</h3>
+              <p className="mb-4 text-crec-darkgray">
+                Le CREC développe des programmes de formation et de recherche sur la gouvernance éthique 
+                des organisations, en s'appuyant sur la tradition intellectuelle de la Compagnie de Jésus.
+              </p>
+              <p className="mb-6 text-crec-darkgray">
+                Nous formons des leaders capables d'allier performance et responsabilité, 
+                en intégrant les dimensions économiques, sociales, environnementales et spirituelles 
+                dans leur prise de décision.
+              </p>
+              <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
+                <Link to="/formations/governance">En savoir plus</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
