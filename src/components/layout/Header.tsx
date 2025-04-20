@@ -73,8 +73,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.about')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuContent className="absolute top-full left-0 w-full">
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
                       {submenuItems.about.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -95,8 +95,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.formations')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[220px] gap-1 p-2">
+                  <NavigationMenuContent className="absolute top-full left-0 w-full">
+                    <ul className="grid w-[220px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
                       {submenuItems.formations.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -117,8 +117,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.events')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuContent className="absolute top-full left-0 w-full">
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
                       {submenuItems.events.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -139,8 +139,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.news')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuContent className="absolute top-full left-0 w-full">
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
                       {submenuItems.news.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -161,8 +161,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.resources')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuContent className="absolute top-full left-0 w-full">
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
                       {submenuItems.resources.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
