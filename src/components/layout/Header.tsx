@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
@@ -23,7 +22,6 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
-  // Structure des sous-menus pour les éléments de navigation
   const submenuItems = {
     about: [
       { name: "Mission", path: "/about/mission" },
@@ -52,28 +50,16 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 w-full z-50">
-      {/* Barre supérieure simplifiée (sans téléphone et sans liens de connexion) */}
-      <div className="bg-crec-darkblue text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="flex md:flex-row gap-6">
-            <span>contact@crec-education.org</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation principale */}
       <div className="bg-white shadow-md py-3 px-4">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Logo remplacé par l'image fournie */}
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/13786322-1618-43a4-a6ff-b01832fcf661.png" 
               alt="CREC Logo" 
-              className="h-12"
+              className="h-16 w-48 object-contain"
             />
           </Link>
 
-          {/* Navigation desktop avec menus déroulants */}
           <div className="hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>
@@ -83,7 +69,6 @@ const Header = () => {
                   </Link>
                 </NavigationMenuItem>
 
-                {/* À propos avec menu déroulant */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.about')}
@@ -106,7 +91,6 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Formations avec menu déroulant */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.formations')}
@@ -129,7 +113,6 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Événements avec menu déroulant */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.events')}
@@ -152,7 +135,6 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* News avec menu déroulant */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.news')}
@@ -175,7 +157,6 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Resources avec menu déroulant */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.resources')}
@@ -213,7 +194,6 @@ const Header = () => {
             </NavigationMenu>
           </div>
 
-          {/* Boutons utilitaires */}
           <div className="flex items-center gap-2">
             <button
               onClick={toggleSearch}
@@ -233,7 +213,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Barre de recherche */}
         {isSearchOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-md p-4 z-50">
             <div className="container mx-auto">
@@ -253,7 +232,6 @@ const Header = () => {
         )}
       </div>
 
-      {/* Menu mobile */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white shadow-md">
           <div className="container mx-auto py-4">
@@ -266,7 +244,6 @@ const Header = () => {
                 {t('nav.home')}
               </Link>
               
-              {/* Sous-menus repliables pour mobile */}
               {Object.entries({ 
                 [t('nav.about')]: submenuItems.about,
                 [t('nav.formations')]: submenuItems.formations,
