@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Banner from '@/components/common/Banner';
 import SectionTitle from '@/components/common/SectionTitle';
@@ -305,27 +304,27 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mt-10">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1473177104440-ffee2f376098" 
+                src="/lovable-uploads/19d8b1fa-9293-4d3e-bedb-c444560c7685.png" 
                 alt="Communauté CREC" 
                 className="rounded-lg shadow-lg w-full h-80 object-cover"
               />
             </div>
             <div>
               <p className="mb-4 text-crec-darkgray">
-                Rejoignez le CREC en vous inscrivant à notre newsletter, en devenant bénévole,
-                ou en participant à l'une de nos formations ou événements.
+                Rejoignez le CREC et participez à notre mission éducative. 
+                Que ce soit par la newsletter, le bénévolat ou nos formations, 
+                chaque contribution compte.
               </p>
               <p className="mb-6 text-crec-darkgray">
-                Ensemble, construisons un avenir plus juste, solidaire et respectueux 
-                de la dignité de chaque personne et de notre environnement.
+                Ensemble, construisons un avenir plus éclairé, solidaire et respectueux.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <Button asChild variant="default" className="bg-crec-darkblue hover:bg-crec-blue">
-                  <Link to="/contact">Nous rejoindre</Link>
+                  <Link to="/contact">S'inscrire à la newsletter</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
-                  <Link to="/about/team">Notre équipe</Link>
+                  <Link to="/about/team">Découvrir notre équipe</Link>
                 </Button>
               </div>
             </div>
