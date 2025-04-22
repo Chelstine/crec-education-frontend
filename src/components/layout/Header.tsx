@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
@@ -11,7 +12,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const Header = () => {
@@ -56,7 +56,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/13786322-1618-43a4-a6ff-b01832fcf661.png" 
               alt="CREC Logo" 
-              className="h-16 w-48 object-contain"
+              className="h-16 w-56 object-contain"
             />
           </Link>
 
@@ -73,8 +73,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.about')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute top-full left-0 w-full">
-                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
                       {submenuItems.about.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -95,8 +95,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.formations')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute top-full left-0 w-full">
-                    <ul className="grid w-[220px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
+                  <NavigationMenuContent>
+                    <ul className="grid w-[220px] gap-1 p-2 bg-white shadow-lg border rounded-md">
                       {submenuItems.formations.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -117,8 +117,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.events')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute top-full left-0 w-full">
-                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
                       {submenuItems.events.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -139,8 +139,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.news')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute top-full left-0 w-full">
-                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
                       {submenuItems.news.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
@@ -161,8 +161,8 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
                     {t('nav.resources')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute top-full left-0 w-full">
-                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md mt-2 ml-[-50px]">
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
                       {submenuItems.resources.map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="bg-crec-darkblue text-white">
       {/* Section principale */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo et contact */}
           <div>
             <div className="font-serif text-2xl font-bold mb-4">
@@ -36,20 +36,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-300 hover:text-white transition">{t('nav.about')}</Link></li>
               <li><Link to="/formations" className="text-gray-300 hover:text-white transition">{t('nav.formations')}</Link></li>
-              <li><Link to="/events" className="text-gray-300 hover:text-white transition">{t('nav.events')}</Link></li>
-              <li><Link to="/news" className="text-gray-300 hover:text-white transition">{t('nav.news')}</Link></li>
+              <li><Link to="/events" className="text-gray-300 hover:text-white transition">Actualités & Événements</Link></li>
               <li><Link to="/resources" className="text-gray-300 hover:text-white transition">{t('nav.resources')}</Link></li>
               <li><Link to="/contact" className="text-gray-300 hover:text-white transition">{t('nav.contact')}</Link></li>
-            </ul>
-          </div>
-
-          {/* Accès */}
-          <div>
-            <h3 className="text-lg font-medium mb-4 text-crec-gold">Accès</h3>
-            <ul className="space-y-2">
-              <li><Link to="/student" className="text-gray-300 hover:text-white transition">Espace Étudiants</Link></li>
-              <li><Link to="/teacher" className="text-gray-300 hover:text-white transition">Espace Enseignants</Link></li>
-              <li><Link to="/admin" className="text-gray-300 hover:text-white transition">Administration</Link></li>
               <li><Link to="/donate" className="text-gray-300 hover:text-white transition">{t('nav.donate')}</Link></li>
             </ul>
           </div>
