@@ -22,7 +22,8 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   return (
     <div className={`min-h-screen ${bgColor}`}>
       {/* Page Banner */}
-      <div className="bg-crec-darkblue py-12 px-4">
+      <div className="bg-crec-darkblue py-6 px-4">
+
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">{title}</h1>
           {description && (

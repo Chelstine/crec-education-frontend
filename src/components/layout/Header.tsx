@@ -24,15 +24,15 @@ const Header = () => {
 
   const submenuItems = {
     about: [
+      { name: "Qui sommes nous", path: "/about/Jésuites" },
       { name: "Mission", path: "/about/mission" },
       { name: "Équipe", path: "/about/team" },
       { name: "Partenaires", path: "/about/partners" },
     ],
     formations: [
-      { name: "Programmes", path: "/formations/programs" },
-      { name: "Université", path: "/formations/university" },
-      { name: "Citoyenneté", path: "/formations/citizenship" },
-      { name: "Admission", path: "/formations/admission" },
+      { name: "ISTMR", path:"/formations/university" },
+      { name: "Formations ouvertes ", path: "/formations/ Formations"},
+      { name: "FABLAB ", path: "/formations/programs" },
     ],
     events: [
       { name: "Calendrier", path: "/events/calendar" },
@@ -49,50 +49,50 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 w-full z-50">
+    <header className="sticky top-0 w-full z-50 font-sans text-[14pt] leading-relaxed">
       <div className="bg-white shadow-md py-3 px-4">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="ml-[1cm ] mt-2 block">
             <img 
-              src="/lovable-uploads/13786322-1618-43a4-a6ff-b01832fcf661.png" 
+            src='/img/logo.png'
               alt="CREC Logo" 
-              className="h-16 w-56 object-contain"
+              className="h-16 w-[4cm] object-contain"
             />
           </Link>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:block text-[14pt] font-sans leading-relaxed">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link to="/" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-medium">
+                  <Link to="/" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-sans text-[14pt]">
                     {t('nav.home')}
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
-                    {t('nav.about')}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
-                      {submenuItems.about.map((item) => (
-                        <li key={item.path}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={item.path}
-                              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold"
-                            >
-                              {item.name}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent font-sans text-[14pt]">
+    {t('nav.about')}
+  </NavigationMenuTrigger>
+  <NavigationMenuContent>
+    <ul className="grid w-[200px] gap-1 p-2 bg-white shadow-lg border rounded-md">
+      {submenuItems.about.map((item) => (
+        <li key={item.path}>
+          <NavigationMenuLink asChild>
+            <Link
+              to={item.path}
+              className="block select-none rounded-md p-2 hover:bg-crec-offwhite hover:text-crec-gold font-sans text-[14pt]]"
+            >
+              {item.name}
+            </Link>
+          </NavigationMenuLink>
+        </li>
+      ))}
+    </ul>
+  </NavigationMenuContent>
+</NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent font-sans text-[14pt]">
                     {t('nav.formations')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -114,7 +114,7 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent font-sans text-[14pt]">
                     {t('nav.events')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -136,7 +136,7 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent font-sans text-[14pt]">
                     {t('nav.news')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -158,7 +158,7 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent">
+                  <NavigationMenuTrigger className="text-crec-darkblue hover:text-crec-gold bg-transparent hover:bg-transparent font-sans text-[14pt]">
                     {t('nav.resources')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -180,13 +180,13 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/contact" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-medium">
+                  <Link to="/contact" className="px-3 py-2 text-crec-darkblue hover:text-crec-gold transition font-sans text-[14pt]">
                     {t('nav.contact')}
                   </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Button asChild variant="default" className="ml-2 bg-crec-gold hover:bg-crec-lightgold text-white">
+                  <Button asChild variant="default" className="ml-2 bg-crec-gold hover:bg-crec-lightgold text-white font-sans text-[14pt]">
                     <Link to="/donate">{t('nav.donate')}</Link>
                   </Button>
                 </NavigationMenuItem>

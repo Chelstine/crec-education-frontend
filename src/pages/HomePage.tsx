@@ -15,22 +15,22 @@ const HomePage = () => {
     {
       id: 1,
       title: 'Université ISTMR',
-      description: 'Formation complète en théologie catholique avec une approche interdisciplinaire.',
-      image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+      description: 'Nous formons une nouvelle génération de professionnels du numérique, compétents et responsables. À travers l’ISTMR, nous proposons des formations universitaires de haut niveau en développement de logiciels, en création d’applications web et mobiles, et en science des données — pour accompagner les mutations technologiques de notre continent.',
+      image: '/img/universite.png',
       link: '/formations/university'
     },
     {
       id: 2,
       title: 'Formations ouvertes',
-      description: 'Cours d\'anglais, ateliers informatiques, accompagnement scolaire et formations accessibles à tous.',
-      image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be',
-      link: '/formations/citizenship'
+      description: 'Nous croyons que l’éducation ne doit exclure personne. C’est pourquoi nous proposons des formations ouvertes à tous : cours d’anglais, initiation à l’informatique, et accompagnement scolaire. Que vous soyez en reconversion, sans diplôme ou simplement en quête de savoir, nous vous accompagnons avec des outils concrets et certifiants, adaptés à votre rythme et à vos besoins.',
+      image: '/img/formation.png',
+      link: '/formations/Formations'
     },
     {
       id: 3,
       title: 'Fablab',
-      description: 'Ateliers de fabrication, innovation, projets pratiques et développement de compétences techniques.',
-      image: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a',
+      description: 'Nous mettons à votre disposition des espaces d’expérimentation concrets pour inventer, construire et apprendre autrement. Nos ateliers Fablab sont ouverts aux étudiants, passionnés et professionnels désireux de prototyper des idées, de manipuler des technologies, et d’innover au service de leur communauté.Nos épiquements sont à votre disposition pour réaliser des projets incroyables.',
+      image: '/img/fablab.png',
       link: '/formations/programs'
     }
   ];
@@ -60,7 +60,6 @@ const HomePage = () => {
     { name: "Association Écologique", logo: "https://via.placeholder.com/150x80?text=Logo+3" },
     { name: "Institut de Recherche", logo: "https://via.placeholder.com/150x80?text=Logo+4" }
   ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
@@ -83,14 +82,22 @@ const HomePage = () => {
                 subtitle="Une institution engagée dans la formation intégrale de la personne."
               />
               <p className="mb-6 text-crec-darkgray">
-                Le CREC est un centre d'excellence dédié à la formation, la recherche et l'accompagnement. 
-                Notre mission est de développer une éducation intégrale qui allie excellence académique, 
-                valeurs spirituelles et engagement sociétal.
-              </p>
-              <p className="mb-8 text-crec-darkgray">
-                Fondé sur des valeurs chrétiennes jésuites, notre centre est un lieu d'étude, de dialogue et de création 
-                où enseignants et étudiants collaborent pour répondre aux défis contemporains.
-              </p>
+              ✝️ Les Jésuites et le CREC<br/>
+Depuis sa fondation , la Compagnie de Jésus s'est engagée dans l’éducation à travers le
+ monde avec une pédagogie rigoureuse et humaniste. Cet engagement a donné 
+ naissance à de nombreuses institutions académiques d’excellence.
+
+C’est dans cette 
+tradition que le CREC (Centre de Recherche d’Étude et de Créativité) a été fondé
+ au Bénin en 2012. Il incarne la mission éducative, sociale et spirituelle des Jésuites à travers des actions concrètes :<br/>
+
+-🔎 Recherche & Innovation<br/>
+
+-🎓 Formation  universitaire  et ouverte,& Accompagnement<br/>
+
+-🌍 Gouvernance éthique & écologie intégrale<br/>
+
+ </p>
               <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
                 <Link to="/about">En savoir plus sur nous</Link>
               </Button>
@@ -98,7 +105,7 @@ const HomePage = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="/lovable-uploads/54af634e-ab6c-47b4-890e-b39e70a7f3d0.png" 
+                src='/img/eglise.png'
                   alt="Église Jésuite" 
                   className="w-full h-96 object-cover"
                 />
@@ -114,34 +121,34 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Formations section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="Nos formations"
-            subtitle="Le CREC propose un large éventail de formations, allant de l'enseignement supérieur universitaire avec l'ISTMR, à des formations courtes et accessibles à tous."
-            align="center"
-          />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.map((course) => (
-              <Card
-                key={course.id}
-                title={course.title}
-                description={course.description}
-                image={course.image}
-                link={course.link}
-              />
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Button asChild variant="default" className="bg-crec-darkblue hover:bg-crec-blue">
-              <Link to="/formations">Toutes nos formations</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+   {/* Formations section */}
+<section className="py-16 bg-white">
+  <div className="max-w-[100vw] px-4 sm:px-8 lg:px-16 xl:px-24 mx-auto">
+    <SectionTitle 
+      title=" 🎓 Nos formations"
+      subtitle='Une communauté qui pense à la culture intellectuelle humaine'
+      align="center"
+    />
+
+    <p className="text-crec-darkgray text-lg text-justify leading-relaxed max-w-7xl mx-auto mt-6 mb-12">
+      Le Centre de Recherche, d’Étude et de Créativité (CREC) est une œuvre éducative jésuite basée à Godomey, engagée dans la formation d'hommes et de femmes compétents, responsables et ouverts à l’innovation.
+      Le CREC propose plusieurs types de formations accessibles à différents profils, allant des programmes universitaires à des ateliers pratiques et inclusifs.
+    </p>
+    
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {courses.map((course) => (
+        <Card
+          key={course.id}
+          title={course.title}
+          description={course.description}
+          image={course.image}
+          link={course.link}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Écologie section */}
       <section className="py-16 bg-crec-offwhite">
@@ -175,7 +182,7 @@ const HomePage = () => {
             </div>
             <div className="order-1 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
+                  src="/img/ecologie.png"
                 alt="Écologie intégrale" 
                 className="rounded-lg shadow-lg w-full h-80 object-cover"
               />
@@ -201,7 +208,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mt-10">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1494891848038-7bd202a2afeb" 
+                src="/img/gouvernement.png" 
                 alt="Gouvernance éthique" 
                 className="rounded-lg shadow-lg w-full h-80 object-cover"
               />
@@ -287,56 +294,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Rejoindre section */}
-      <section className="py-16 bg-crec-offwhite">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center mb-6">
-            <div className="bg-crec-lightgold p-3 rounded-full">
-              <Users className="h-6 w-6 text-crec-darkblue" />
-            </div>
-          </div>
-          <SectionTitle 
-            title="Rejoindre notre communauté"
-            subtitle="Devenir acteur d'une éducation transformatrice"
-            align="center"
-          />
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-10">
-            <div>
-              <img 
-                src="/lovable-uploads/19d8b1fa-9293-4d3e-bedb-c444560c7685.png" 
-                alt="Communauté CREC" 
-                className="rounded-lg shadow-lg w-full h-80 object-cover"
-              />
-            </div>
-            <div>
-              <p className="mb-4 text-crec-darkgray">
-                Rejoignez le CREC et participez à notre mission éducative. 
-                Que ce soit par la newsletter, le bénévolat ou nos formations, 
-                chaque contribution compte.
-              </p>
-              <p className="mb-6 text-crec-darkgray">
-                Ensemble, construisons un avenir plus éclairé, solidaire et respectueux.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Button asChild variant="default" className="bg-crec-darkblue hover:bg-crec-blue">
-                  <Link to="/contact">S'inscrire à la newsletter</Link>
-                </Button>
-                <Button asChild variant="outline" className="border-crec-gold text-crec-darkblue hover:bg-crec-gold hover:text-white">
-                  <Link to="/about/team">Découvrir notre équipe</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
 
       {/* CTA section */}
       <Banner 
         title="Rejoignez notre communauté éducative"
         subtitle="Devenez acteur d'une éducation transformatrice fondée sur des valeurs."
-        bgImage="https://images.unsplash.com/photo-1517022812141-23620dba5c23"
+        bgImage="/img/com.png"
         ctaText="Postuler"
         ctaLink="/formations/admission"
         size="md"

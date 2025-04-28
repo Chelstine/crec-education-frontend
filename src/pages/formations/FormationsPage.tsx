@@ -1,134 +1,88 @@
-
 import React from 'react';
 import PageWrapper from '@/components/common/PageWrapper';
 import SectionTitle from '@/components/common/SectionTitle';
 import Card from '@/components/common/Card';
 
-const FormationsPage = () => {
-  // Données factices pour les types de formations
-  const formationTypes = [
+const OpenCoursesPage = () => {
+  const openCourses = [
     {
       id: 1,
-      title: 'Licences',
-      description: 'Formations universitaires de premier cycle',
-      image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1',
-      link: '/formations/programs'
+      title: "Cours d’Anglais",
+      image: "/img/anglais.png",
+      description: "Développez vos compétences en anglais oral et écrit, du niveau débutant à avancé, dans une ambiance conviviale et interactive.",
     },
     {
       id: 2,
-      title: 'Masters',
-      description: 'Formations universitaires de second cycle',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
-      link: '/formations/programs'
+      title: "Initiation à l’informatique",
+      image: "/img/informatique.png",
+      description: "Apprenez à utiliser un ordinateur, naviguer sur internet, et maîtriser les outils bureautiques essentiels (Word, Excel…).",
     },
     {
       id: 3,
-      title: 'Certificats',
-      description: 'Formations courtes et spécialisées',
-      image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66',
-      link: '/formations/programs'
+      title: "Accompagnement scolaire",
+      image: "/img/accompagnement.png",
+      description: "Soutien en mathématiques, français, physique, pour élèves en difficulté ou en recherche d’excellence. Coaching personnalisé.",
     },
-    {
-      id: 4,
-      title: 'Formation Continue',
-      description: 'Modules adaptés aux professionnels en activité',
-      image: 'https://images.unsplash.com/photo-1507537297725-24a1c029d3ca',
-      link: '/formations/courses'
-    }
   ];
 
   return (
-    <PageWrapper 
-      title="Nos Formations" 
-      description="Découvrez l'ensemble de notre offre de formation"
-    >
-      {/* Introduction */}
-      <div className="max-w-3xl mx-auto mb-12">
+    <PageWrapper title="Formations Ouvertes à Tous" description="Des opportunités éducatives accessibles pour toutes et tous">
+      {/* Intro */}
+      <div className="max-w-3xl mx-auto mb-12 text-center">
         <SectionTitle 
-          title="Une éducation intégrale" 
-          subtitle="Des parcours de formation qui allient excellence académique, développement personnel et engagement sociétal"
+          title="📚 Formations Ouvertes" 
+          subtitle="Apprendre, se former et évoluer à tout âge"
         />
-        <p className="text-crec-darkgray">
-          Le CREC propose un ensemble de formations universitaires et professionnelles fondées sur une approche 
-          intégrale de l'éducation. Nos programmes conjuguent rigueur académique, ouverture au dialogue et 
-          attention à la personne dans sa globalité.
+        <p className="text-crec-darkgray text-lg leading-relaxed mt-4">
+          Le CREC propose des formations courtes, certifiantes et accessibles à toutes les personnes motivées, qu’elles soient en reconversion, en insertion, ou simplement en quête de nouvelles compétences.
         </p>
       </div>
 
-      {/* Types de formations */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold text-crec-darkblue mb-8">Types de Formations</h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {formationTypes.map((formation) => (
-            <Card
-              key={formation.id}
-              title={formation.title}
-              description={formation.description}
-              image={formation.image}
-              link={formation.link}
-            />
-          ))}
-        </div>
-      </section>
+      {/* Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+        {openCourses.map(course => (
+          <Card
+            key={course.id}
+            title={course.title}
+            description={course.description}
+            image={course.image}
+            link="/formations/admission"
+            linkText="Postuler"
+          />
+        ))}
+      </div>
 
-      {/* Navigation rapide */}
+      {/* Admission */}
       <section className="bg-crec-offwhite p-8 rounded-lg mb-16">
-        <h2 className="text-2xl font-semibold text-crec-darkblue mb-6 text-center">Explorer nos formations</h2>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          <a 
-            href="/formations/programs" 
-            className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition"
-          >
-            <h3 className="text-xl font-medium text-crec-darkblue mb-2">Programmes d'études</h3>
-            <p className="text-crec-darkgray mb-4">Consultez nos programmes complets</p>
-            <span className="text-crec-gold font-medium">Découvrir →</span>
-          </a>
-          
-          <a 
-            href="/formations/courses" 
-            className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition"
-          >
-            <h3 className="text-xl font-medium text-crec-darkblue mb-2">Cours et modules</h3>
-            <p className="text-crec-darkgray mb-4">Explorez notre catalogue de cours</p>
-            <span className="text-crec-gold font-medium">Découvrir →</span>
-          </a>
-          
-          <a 
-            href="/formations/admission" 
-            className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition"
-          >
-            <h3 className="text-xl font-medium text-crec-darkblue mb-2">Admission</h3>
-            <p className="text-crec-darkgray mb-4">Procédure et critères d'admission</p>
-            <span className="text-crec-gold font-medium">Découvrir →</span>
+        <h2 className="text-2xl font-semibold text-crec-darkblue mb-4 text-center">🎓 Conditions d’admission</h2>
+        <ul className="list-disc list-inside text-crec-darkgray max-w-2xl mx-auto text-lg leading-relaxed">
+          <li>Avoir 16 ans minimum</li>
+          <li>Être motivé(e) à apprendre et à progresser</li>
+          <li>Aucune exigence de diplôme requis</li>
+          <li>Dossier de candidature avec :
+            <ul className="ml-6 list-disc">
+              <li>Formulaire d’inscription</li>
+              <li>Pièce d’identité</li>
+              <li>Photo d’identité</li>
+              <li>Lettre de motivation (facultative)</li>
+            </ul>
+          </li>
+        </ul>
+        <div className="text-center mt-8">
+          <a href="/formations/admission" className="px-6 py-3 bg-crec-gold text-white rounded-md hover:bg-crec-lightgold transition">
+            Déposer ma candidature
           </a>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="text-center">
-        <h2 className="text-2xl font-semibold text-crec-darkblue mb-4">Prêt à nous rejoindre ?</h2>
-        <p className="text-lg text-crec-darkgray mb-6 max-w-2xl mx-auto">
-          Commencez votre parcours au CREC et développez vos compétences dans un environnement stimulant et bienveillant.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a 
-            href="/formations/admission" 
-            className="px-6 py-3 bg-crec-darkblue text-white rounded-md hover:bg-crec-blue transition"
-          >
-            Candidater
-          </a>
-          <a 
-            href="/contact" 
-            className="px-6 py-3 border border-crec-darkblue text-crec-darkblue rounded-md hover:bg-crec-darkblue hover:text-white transition"
-          >
-            Nous contacter
-          </a>
-        </div>
-      </section>
+      {/* Contact */}
+      <div className="text-center">
+        <h3 className="text-xl text-crec-darkblue font-semibold mb-2">Besoin d’aide ?</h3>
+        <p className="text-crec-darkgray mb-4">Notre équipe est à votre disposition pour répondre à vos questions.</p>
+        <a href="/contact" className="underline text-crec-gold hover:text-crec-darkblue font-medium">Nous contacter</a>
+      </div>
     </PageWrapper>
   );
 };
 
-export default FormationsPage;
+export default OpenCoursesPage;

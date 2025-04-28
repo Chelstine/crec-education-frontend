@@ -3,6 +3,7 @@ import { Globe } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
+
 const LangSwitcher = () => {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);

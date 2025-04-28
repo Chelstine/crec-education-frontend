@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Mail , Linkedin} from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
@@ -21,8 +21,9 @@ const Footer = () => {
               Centre de Recherche, d'Étude et de Créativité
             </p>
             <p className="mt-4 text-sm text-gray-300">
-              123 Avenue de l'Éducation<br />
-              75001 Paris, France
+            Godomey-Salamey, Maison des Pères Jésuites,<br />
+             Lot N°2 du lotissement de Godomey Sud,<br />
+              tranche B. -  B.P. 307 Godomey
             </p>
             <div className="mt-4 text-sm text-gray-300">
               <p>contact@crec-education.org</p>
@@ -73,9 +74,13 @@ const Footer = () => {
               <a href="#" className="bg-crec-blue hover:bg-crec-lightblue p-2 rounded transition" aria-label="Youtube">
                 <Youtube size={18} />
               </a>
+              <a href="#" className="bg-crec-blue hover:bg-crec-lightblue p-2 rounded transition" aria-label="Youtube">
+                <Linkedin size={18} />
+              </a>
               <a href="mailto:contact@crec-education.org" className="bg-crec-blue hover:bg-crec-lightblue p-2 rounded transition" aria-label="Email">
                 <Mail size={18} />
               </a>
+              
             </div>
           </div>
         </div>

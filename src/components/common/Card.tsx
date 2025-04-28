@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({
   children
 }) => {
   const CardContent = () => (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden h-full transition-transform hover:translate-y-[-5px] ${className}`}>
+    <div className={`bg-white border border-crec-gold rounded-xl shadow-lg hover:shadow-4xl transition-shadow duration-300 hover:-translate-y-1 transform overflow-hidden h-full ${className}`}>
       {image && (
         <div className="relative h-48 overflow-hidden">
           <img 

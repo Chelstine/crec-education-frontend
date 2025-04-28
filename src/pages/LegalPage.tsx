@@ -18,12 +18,7 @@ const LegalPage = () => {
             Téléphone : +33 (0)1 23 45 67 89<br />
             Email : contact@crec-education.org
           </p>
-          <p>
-            Association loi 1901<br />
-            N° SIRET : 123 456 789 00012<br />
-            N° RNA : W123456789
-          </p>
-          
+        
           <h2 className="text-xl font-semibold text-crec-darkblue mt-8">Directeur de la publication</h2>
           <p>
             Pr. Marc Dupont, Président du CREC
@@ -39,7 +34,7 @@ const LegalPage = () => {
           
           <h2 className="text-xl font-semibold text-crec-darkblue mt-8">Conception et développement</h2>
           <p>
-            Ce site a été conçu et développé par l'équipe Lovable.
+            Ce site a été conçu et développé par l'équipe du Crec .
           </p>
           
           <h2 className="text-xl font-semibold text-crec-darkblue mt-8">Propriété intellectuelle</h2>

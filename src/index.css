@@ -98,5 +98,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: Cambria, serif;
+    font-size: 16pt;
   }
 }
